@@ -75,8 +75,10 @@ get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/applicati
 run 'bundle install'
 
 after_bundle do
-  generate('rails_footnotes:install')
   git :init
   git add: '.'
   git commit: "-a -m 'Initial commit'"
 end
+
+generate('rails_footnotes:install')
+generate('', 'rails_footnotes:install')
