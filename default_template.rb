@@ -52,7 +52,7 @@ end
 GENERATORS
 
 remove_file './app/views/layouts/application.html.erb'
-get 'https://gist.githubusercontent.com/5t111111/d1c07e7e45436d6ff6fc/raw/application.html.slim', './app/views/layouts/application.html.slim'
+get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/application.html.slim', './app/views/layouts/application.html.slim'
 
 run 'bundle install'
 
