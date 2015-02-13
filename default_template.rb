@@ -81,4 +81,3 @@ after_bundle do
 end
 
 generate('rails_footnotes:install')
-generate('', 'rails_footnotes:install')
