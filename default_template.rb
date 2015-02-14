@@ -49,13 +49,11 @@ if yes?('Do you want to use rails assets?')
   gem 'rails-assets-bootstrap' if yes?('Do you want to use rails-assets-bootstrap?')
 end
 
-if yes?('Do you want to use sorcery?')
-  gem 'sorcery'
-end
+install_sorcery = yes?('Do you want to use sorcery?') ? true : false
+gem 'sorcery' if install_sorcery
 
-if yes?('Do you want to use kaminari?')
-  gem 'kaminari'
-end
+install_kaminari = yes?('Do you want to use kaminari?') ? true : false
+gem 'kaminari' if install_kaminari
 
 if yes?('Do you want to use bootstrap?')
   gem 'bootstrap-sass'
@@ -74,10 +72,12 @@ get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/applicati
 
 run 'bundle install'
 
+generate('rails_footnotes:install')
+generate('sorcery:install') if install_sorcery
+generate('kaminari:config') if install_kaminari
+
 after_bundle do
   git :init
   git add: '.'
   git commit: "-a -m 'Initial commit'"
 end
-
-generate('rails_footnotes:install')
