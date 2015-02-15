@@ -73,6 +73,7 @@ get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/applicati
 
 run 'bundle install'
 
+generate('annotate:install')
 generate('rails_footnotes:install')
 generate('sorcery:install') if install_sorcery
 generate('kaminari:config') if install_kaminari
