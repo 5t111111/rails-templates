@@ -19,6 +19,7 @@ gem_group :development, :test do
   gem 'rack-mini-profiler', require: false
   gem 'rails_best_practices'
   gem 'rails-footnotes'
+  gem 'seed-fu'
   gem 'tapp'
 end
 
