@@ -41,6 +41,8 @@ gem_group :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'timecop'
+  gem 'guard'
+  gem 'guard-minitest'
 end
 
 if yes?('Do you want to use rails assets?')
