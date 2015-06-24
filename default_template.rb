@@ -4,7 +4,6 @@ gem 'slim-rails'
 gem 'puma'
 
 gem_group :development, :test do
-  gem 'annotate'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -19,17 +18,16 @@ gem_group :development, :test do
   gem 'rack-mini-profiler', require: false
   gem 'rails_best_practices'
   gem 'rails-footnotes'
-  gem 'seed-fu'
-  gem 'tapp'
+  gem 'qtapp'
 end
 
 initializer 'rack_profiler.rb', <<-CODE
   if Rails.env == 'development'
     require 'rack-mini-profiler'
-  
+
     # initialization is skipped so trigger it
     Rack::MiniProfilerRails.initialize!(Rails.application)
-  
+
     # Display on right
     Rack::MiniProfiler.config.position = 'right'
   end
@@ -73,7 +71,6 @@ get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/applicati
 
 run 'bundle install'
 
-generate('annotate:install')
 generate('rails_footnotes:install')
 generate('sorcery:install') if install_sorcery
 generate('kaminari:config') if install_kaminari
