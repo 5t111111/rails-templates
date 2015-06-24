@@ -9,7 +9,7 @@ guard :minitest, spring: true, all_on_start: false do
   watch(%r{^app/controllers/(.*?)_controller\.rb$}) do |matches|
     resource_tests(matches[1])
   end
-  watch(%r{^app/views/([^/]*?)/.*\.html\.erb$}) do |matches|
+  watch(%r{^app/views/([^/]*?)/.*\.slim$}) do |matches|
     ["test/controllers/#{matches[1]}_controller_test.rb"] +
     integration_tests(matches[1])
   end

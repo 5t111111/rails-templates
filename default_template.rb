@@ -71,6 +71,8 @@ GENERATORS
 remove_file './app/views/layouts/application.html.erb'
 get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/application.html.slim', './app/views/layouts/application.html.slim'
 
+get 'https://raw.githubusercontent.com/5t111111/rails-templates/master/Guardfile', './Guardfile'
+
 run 'bundle install'
 
 generate('rails_footnotes:install')
