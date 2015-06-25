@@ -52,6 +52,8 @@ if yes?('Do you want to use rails assets?')
   end
 end
 
+add_source('https://rails-assets.org') do
+
 install_sorcery = yes?('Do you want to use sorcery?') ? true : false
 gem 'sorcery' if install_sorcery
 
