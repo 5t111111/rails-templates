@@ -46,8 +46,10 @@ gem_group :test do
 end
 
 if yes?('Do you want to use rails assets?')
-  add_source('https://rails-assets.org')
-  gem 'rails-assets-bootstrap' if yes?('Do you want to use rails-assets-bootstrap?')
+  add_source('https://rails-assets.org') do
+    gem 'rails-assets-angular'
+    gem 'rails-assets-bootstrap' if yes?('Do you want to use rails-assets-bootstrap?')
+  end
 end
 
 install_sorcery = yes?('Do you want to use sorcery?') ? true : false
